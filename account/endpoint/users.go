@@ -1,8 +1,6 @@
 package endpoint
 
 import (
-	"context"
-
 	"github.com/gin-gonic/gin"
 	"github.com/mayur-ralali/tachyon/account/pb"
 	"github.com/mayur-ralali/tachyon/lib"
@@ -25,7 +23,7 @@ func (*UserClient) Add(c *gin.Context) {
 
 	client := pb.NewAddServiceClient(conn)
 	req := &pb.Request{A: a, B: b}
-	resp, err := client.Add(context.TODO(), req)
+	resp, err := client.Add(c, req)
 
 	lib.BuildResponse(c, resp.Result, err)
 }
