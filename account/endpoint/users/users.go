@@ -1,10 +1,10 @@
-package endpoint
+package users
 
 import (
 	"context"
 
 	"github.com/gin-gonic/gin"
-	"github.com/mayur-ralali/tachyon/account/grpc/pb"
+	"github.com/mayur-ralali/tachyon/account/pb"
 	"github.com/mayur-ralali/tachyon/lib"
 	"github.com/mayur-tolexo/flash"
 	"google.golang.org/grpc"

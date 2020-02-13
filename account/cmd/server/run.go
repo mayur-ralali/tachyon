@@ -4,8 +4,8 @@ import (
 	"log"
 	"net"
 
-	"github.com/mayur-ralali/tachyon/account/grpc/pb"
-	"github.com/mayur-ralali/tachyon/account/grpc/service/users"
+	"github.com/mayur-ralali/tachyon/account/pb"
+	"github.com/mayur-ralali/tachyon/account/server/users"
 	"google.golang.org/grpc"
 )
 

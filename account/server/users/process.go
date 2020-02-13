@@ -3,7 +3,7 @@ package users
 import (
 	"context"
 
-	"github.com/mayur-ralali/tachyon/account/grpc/pb"
+	"github.com/mayur-ralali/tachyon/account/pb"
 )
 
 type Service struct{}
