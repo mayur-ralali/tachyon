@@ -28,8 +28,11 @@ func GetParamInt64(c *gin.Context, key string) (val int64, err error) {
 
 //BuildResponse will build response
 func BuildResponse(c *gin.Context, data interface{}, err error) {
-	c.JSON(200, gin.H{
-		"data":  data,
-		"error": err,
-	})
+	resp := gin.H{}
+	if err != nil {
+		resp["error"] = err
+	} else {
+		resp["data"] = data
+	}
+	c.JSON(200, resp)
 }
