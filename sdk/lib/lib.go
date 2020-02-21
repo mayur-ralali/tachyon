@@ -5,6 +5,7 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
+	"github.com/subosito/gotenv"
 	"google.golang.org/grpc"
 )
 
@@ -35,4 +36,25 @@ func BuildResponse(c *gin.Context, data interface{}, err error) {
 		resp["data"] = data
 	}
 	c.JSON(200, resp)
+}
+
+//LoadEnv will load env
+func LoadEnv() {
+	priority := []string{
+		".env.production",
+		".env.staging",
+		".env.dev",
+		".env",
+	}
+
+	flag := false
+	for _, curEnv := range priority {
+		if err := gotenv.Load(curEnv); err == nil {
+			flag = true
+			break
+		}
+	}
+	if !flag {
+		log.Fatal("No env found")
+	}
 }

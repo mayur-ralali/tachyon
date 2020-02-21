@@ -2,6 +2,7 @@ package users
 
 import (
 	"github.com/gin-gonic/gin"
+
 	"github.com/mayur-ralali/tachyon/sdk/lib"
 	"github.com/mayur-tolexo/flash"
 )

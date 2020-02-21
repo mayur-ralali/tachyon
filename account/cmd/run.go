@@ -4,12 +4,12 @@ import (
 	"os"
 
 	"github.com/mayur-ralali/tachyon/account/api/users"
+	"github.com/mayur-ralali/tachyon/sdk/lib"
 	"github.com/mayur-tolexo/flash"
-	"github.com/joho/godotenv"
 )
 
 func init() {
-	godotenv.Load()
+	lib.LoadEnv()
 }
 
 func main() {
